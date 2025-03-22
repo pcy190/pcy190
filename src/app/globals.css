@@ -3,24 +3,74 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #0f766e;
+  --primary-dark: #0e6660;
+  --secondary: #334155;
+  --accent: #4f46e5;
+  --muted: #6b7280;
+  --card: #f8fafc;
+  --card-border: #e2e8f0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-border: var(--card-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --primary: #14b8a6;
+    --primary-dark: #0d9488;
+    --secondary: #94a3b8;
+    --accent: #6366f1;
+    --muted: #94a3b8;
+    --card: #1e293b;
+    --card-border: #334155;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.academic-gradient {
+  background: linear-gradient(135deg, #14b8a6 0%, #4f46e5 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.tech-pattern {
+  background-image: radial-gradient(rgba(20, 184, 166, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .link-hover {
+    @apply transition-colors duration-200 hover:text-accent;
+  }
+
+  .button-primary {
+    @apply px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors duration-200 font-medium;
+  }
+  
+  .button-secondary {
+    @apply px-4 py-2 bg-transparent border border-secondary text-secondary rounded-md hover:bg-secondary hover:text-white transition-colors duration-200 font-medium;
+  }
 }

@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ret2happy's Blog - Security Research
+
+This project is my personal academic blog built with Next.js and Tailwind CSS, showcasing research and insights in computer and blockchain security.
+
+## Features
+
+- Modern, responsive design with academic aesthetics
+- Dark mode support
+- Blog system with MDX content
+- Showcases research highlights and publications
+- Contact form for professional inquiries
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/) - React framework with App Router
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [MDX](https://mdxjs.com/) - Markdown for the component era
+- [React Icons](https://react-icons.github.io/react-icons/) - Popular icons in React
+- [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote) - Load MDX content from arbitrary sources
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.17 or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/academic-blog.git
+cd academic-blog
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Writing Blog Posts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Blog posts are written in MDX and stored in the `src/content/blog` directory.
 
-## Learn More
+### Creating a New Post
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a new `.mdx` file in the `src/content/blog` directory with the following frontmatter:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```mdx
+---
+title: 'Your Post Title'
+date: 'YYYY-MM-DD'
+excerpt: 'A brief summary of the post'
+tags: ['Tag1', 'Tag2']
+author: 'Your Name'
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Your Post Title
 
-## Deploy on Vercel
+Your content here...
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Write your content using Markdown syntax.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. The post will automatically appear in the blog list page and as a standalone page.
+
+## Deployment to Vercel
+
+### Setting Up Vercel
+
+1. Create an account on [Vercel](https://vercel.com/) if you don't have one.
+
+2. Install Vercel CLI (optional)
+```bash
+npm install -g vercel
+```
+
+### Deploying
+
+#### Option 1: Using Vercel CLI
+
+1. Run the following command in your project directory:
+```bash
+vercel
+```
+
+2. Follow the prompts to link to your Vercel account and project.
+
+#### Option 2: Using Vercel Dashboard
+
+1. Push your code to a GitHub, GitLab, or Bitbucket repository.
+
+2. Import your repository in the Vercel dashboard:
+   - Go to [vercel.com/new](https://vercel.com/new)
+   - Select your repository
+   - Vercel will detect Next.js and apply optimal settings automatically
+   - Click "Deploy"
+
+3. Your site will be deployed to a URL like `your-project.vercel.app`.
+
+### Custom Domain (Optional)
+
+1. In your Vercel dashboard, go to your project settings.
+
+2. Under the "Domains" section, add your custom domain.
+
+3. Follow the instructions to configure DNS settings.
+
+## Customization
+
+- Update site metadata in `src/app/layout.tsx`
+- Modify color schemes in `src/app/globals.css`
+- Update components in the `src/components` directory
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
