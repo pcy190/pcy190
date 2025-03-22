@@ -18,6 +18,16 @@ export const metadata: Metadata = {
   title: "ret2happy's Blog",
   description: "Personal academic blog of ret2happy",
   keywords: ["security research", "blockchain security", "vulnerability research"],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
+    ],
+  },
 };
 
 export default function RootLayout({
