@@ -10,6 +10,7 @@
     "deploy": "next build && next start"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "next": "15.2.3",
