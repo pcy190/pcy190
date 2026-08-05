@@ -1,0 +1,24 @@
+---
+import { avatar } from '@/data/profile';
+
+const sections = [
+  { name: 'Profile', href: '/#profile' },
+  { name: 'Publications', href: '/#publications' },
+  { name: 'Findings', href: '/#findings' },
+  { name: 'Writing', href: '/#writing' },
+  { name: 'Contact', href: '/#contact' },
+];
+---
+
+<header class="masthead">
+  <div class="doc masthead-inner">
+    <a href="/" class="masthead-brand" aria-label="ret2happy, home">
+      <img src={avatar} alt="" width="24" height="24" referrerpolicy="no-referrer" class="masthead-mark" />
+      <span class="masthead-name">ret2happy</span>
+    </a>
+
+    <nav class="masthead-nav" aria-label="Sections">
+      {sections.map((section) => <a href={section.href} class="masthead-link">{section.name}</a>)}
+    </nav>
+  </div>
+</header>

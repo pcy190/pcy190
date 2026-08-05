@@ -1,0 +1,44 @@
+---
+import '@/styles/global.css';
+import Analytics from '@vercel/analytics/astro';
+import Masthead from '@/components/Masthead.astro';
+import Footer from '@/components/Footer.astro';
+import { avatar } from '@/data/profile';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const defaultDescription =
+  'Ph.D. candidate at Zhejiang University working on systems and blockchain security: eBPF runtimes, browser engines, and smart contracts.';
+
+const { title, description = defaultDescription } = Astro.props;
+const pageTitle = title ? `${title} | ret2happy` : 'ret2happy · security research';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={avatar} />
+    <link rel="apple-touch-icon" href={avatar} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+  </head>
+  <body>
+    <Masthead />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <Analytics />
+  </body>
+</html>

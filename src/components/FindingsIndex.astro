@@ -1,0 +1,32 @@
+---
+import { findingGroups } from '@/data/profile';
+
+const heavy = new Set(['Critical', 'High']);
+---
+
+<div class="index-groups">
+  {
+    findingGroups.map((group) => (
+      <div>
+        <div class="index-head">
+          <h3 class="index-product">{group.product}</h3>
+          <span class="index-rule" aria-hidden="true"></span>
+          <span class="index-count">
+            {group.findings.length} {group.findings.length === 1 ? 'report' : 'reports'}
+          </span>
+        </div>
+
+        {group.note && <p class="index-note measure">{group.note}</p>}
+
+        <ul class="index-ids">
+          {group.findings.map((finding) => (
+            <li class="index-id" data-weight={finding.severity && heavy.has(finding.severity) ? 'heavy' : undefined}>
+              {finding.id}
+              {finding.severity && <span class="index-sev">{finding.severity}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>
