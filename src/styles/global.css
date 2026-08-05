@@ -387,64 +387,6 @@ main {
   color: var(--ink);
 }
 
-/* ---- disclosure index ------------------------------------------------ */
-
-.index-groups > div + div {
-  margin-top: 36px;
-}
-
-.index-head {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.index-product {
-  font-family: var(--serif);
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.index-rule {
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
-}
-
-.index-count {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--ink-3);
-}
-
-.index-ids {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px 14px;
-  margin-top: 10px;
-}
-
-.index-id {
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.01em;
-  color: var(--ink-2);
-  white-space: nowrap;
-}
-
-.index-id[data-weight='heavy'] {
-  color: var(--pine);
-}
-
-.index-sev {
-  color: var(--ink-3);
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-left: 4px;
-}
-
 /* ---- footer ---------------------------------------------------------- */
 
 .site-footer {

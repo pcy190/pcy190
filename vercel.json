@@ -5,7 +5,7 @@
   "outputDirectory": "dist",
   "redirects": [
     { "source": "/about", "destination": "/#profile", "permanent": true },
-    { "source": "/research", "destination": "/#disclosures", "permanent": true },
+    { "source": "/research", "destination": "/#publications", "permanent": true },
     { "source": "/contact", "destination": "/#contact", "permanent": true },
     { "source": "/blog", "destination": "/", "permanent": true },
     { "source": "/blog/:path*", "destination": "/", "permanent": true }
