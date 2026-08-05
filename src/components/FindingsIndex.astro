@@ -9,14 +9,10 @@ const heavy = new Set(['Critical', 'High']);
     findingGroups.map((group) => (
       <div>
         <div class="index-head">
-          <h3 class="index-product">{group.product}</h3>
+          <h2 class="index-product">{group.product}</h2>
           <span class="index-rule" aria-hidden="true"></span>
-          <span class="index-count">
-            {group.findings.length} {group.findings.length === 1 ? 'report' : 'reports'}
-          </span>
+          <span class="index-count">{group.findings.length}</span>
         </div>
-
-        {group.note && <p class="index-note measure">{group.note}</p>}
 
         <ul class="index-ids">
           {group.findings.map((finding) => (

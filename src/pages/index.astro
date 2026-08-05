@@ -1,17 +1,7 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '@/layouts/Base.astro';
 import FindingsIndex from '@/components/FindingsIndex.astro';
-import { formatDate, readingTime } from '@/utils/format';
-import {
-  avatar,
-  awards,
-  experience,
-  findingGroups,
-  links,
-  publications,
-  totalFindings,
-} from '@/data/profile';
+import { avatar, awards, experience, links, publications } from '@/data/profile';
 
 const interests = [
   { area: 'Systems security', detail: 'eBPF runtimes, OS kernels, trusted execution environments' },
@@ -19,10 +9,6 @@ const interests = [
   { area: 'Browser security', detail: 'Chrome renderer and browser-process vulnerabilities' },
   { area: 'Blockchain security', detail: 'smart contracts, DeFi protocol design flaws' },
 ];
-
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-);
 ---
 
 <Base>
@@ -36,24 +22,8 @@ const posts = (await getCollection('blog')).sort(
 
         <div>
           <h1 class="profile-name">ret2happy</h1>
-          <p class="profile-role">Ph.D. candidate · Computer security</p>
 
-          <p class="thesis measure">
-            I study how systems software fails under adversarial input, and build the tools that
-            find those failures.
-          </p>
-
-          <div class="intro measure">
-            <p class="note">
-              My work covers kernel eBPF runtimes, browser engines, and smart contracts. Most of it
-              combines differential and coverage-guided fuzzing with reading the code paths a fuzzer
-              will not reach on its own.
-            </p>
-            <p class="note">
-              Reports go to Google, the Android Security Team, and upstream maintainers. So far that
-              is {totalFindings} CVEs and vendor-tracked bug IDs across {findingGroups.length} products.
-            </p>
-          </div>
+          <p class="motto">Attacks only get better.</p>
 
           <div class="link-row">
             <a class="link-meta" href={links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
@@ -106,18 +76,10 @@ const posts = (await getCollection('blog')).sort(
     </section>
 
     <hr class="rule rule-gap" />
-    <section id="findings" class="section">
+    <section id="disclosures" class="section">
       <div class="doc-row">
-        <p class="doc-label">Findings</p>
-        <div>
-          <p class="note measure">
-            Vulnerabilities I reported that vendors have since fixed. Android issues use the
-            internal tracker ID where no CVE was assigned.
-          </p>
-          <div class="intro">
-            <FindingsIndex />
-          </div>
-        </div>
+        <p class="doc-label">Disclosures</p>
+        <FindingsIndex />
       </div>
     </section>
 
@@ -150,71 +112,29 @@ const posts = (await getCollection('blog')).sort(
     </section>
 
     <hr class="rule rule-gap" />
-    <section id="writing" class="section">
-      <div class="doc-row">
-        <p class="doc-label">Writing</p>
-        <div>
-          {
-            posts.length > 0 ? (
-              <ul class="entry-list">
-                {posts.map((post) => (
-                  <li>
-                    <a href={`/blog/${post.id}`}>
-                      <h2 class="entry-title measure">{post.data.title}</h2>
-                    </a>
-                    <p class="entry-meta">
-                      {formatDate(post.data.date)} · {readingTime(post.body ?? '')}
-                    </p>
-                    <p class="entry-note measure">{post.data.excerpt}</p>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p class="note">No posts yet.</p>
-            )
-          }
-        </div>
-      </div>
-    </section>
-
-    <hr class="rule rule-gap" />
     <section id="contact" class="section">
       <div class="doc-row">
         <p class="doc-label">Contact</p>
-        <div>
-          <p class="note measure">
-            Email is the best way to reach me. I read every report, including the ones that turn out
-            to be false positives.
-          </p>
-          <dl class="deflist-mono intro">
-            <div class="deflist-row">
-              <dt class="deflist-term">Email</dt>
-              <dd><a class="link-plain" href={`mailto:${links.email}`}>{links.email}</a></dd>
-            </div>
-            <div class="deflist-row">
-              <dt class="deflist-term">Scholar</dt>
-              <dd>
-                <a class="link-plain" href={links.scholar} target="_blank" rel="noopener noreferrer">
-                  Google Scholar profile
-                </a>
-              </dd>
-            </div>
-            <div class="deflist-row">
-              <dt class="deflist-term">Code</dt>
-              <dd>
-                <a class="link-plain" href={links.github} target="_blank" rel="noopener noreferrer">
-                  github.com/ret2happy
-                </a>
-              </dd>
-            </div>
-            <div class="deflist-row">
-              <dt class="deflist-term">X</dt>
-              <dd>
-                <a class="link-plain" href={links.x} target="_blank" rel="noopener noreferrer">@ret2happy</a>
-              </dd>
-            </div>
-          </dl>
-        </div>
+        <dl class="deflist-mono">
+          <div class="deflist-row">
+            <dt class="deflist-term">Email</dt>
+            <dd><a class="link-plain" href={`mailto:${links.email}`}>{links.email}</a></dd>
+          </div>
+          <div class="deflist-row">
+            <dt class="deflist-term">Scholar</dt>
+            <dd>
+              <a class="link-plain" href={links.scholar} target="_blank" rel="noopener noreferrer">
+                Google Scholar profile
+              </a>
+            </dd>
+          </div>
+          <div class="deflist-row">
+            <dt class="deflist-term">X</dt>
+            <dd>
+              <a class="link-plain" href={links.x} target="_blank" rel="noopener noreferrer">@ret2happy</a>
+            </dd>
+          </div>
+        </dl>
       </div>
     </section>
   </div>

@@ -1,4 +1,4 @@
-// Single source of truth for the research record, shared by the homepage and /research.
+// Single source of truth for the research record.
 
 export type Publication = {
   title: string;
@@ -16,25 +16,41 @@ export type Finding = {
 
 export type FindingGroup = {
   product: string;
-  note?: string;
   findings: Finding[];
 };
 
 export const publications: Publication[] = [
   {
     title:
-      'Toss a Fault to BpfChecker: Revealing Implementation Flaws for eBPF Runtimes via Differential Fuzzing',
+      'Re-Evaluating EVMBench: Are AI Agents Ready for Smart Contract Security?',
+    venue: 'Preprint',
+    venueShort: 'arXiv',
+    year: 2026,
+    link: 'https://arxiv.org/abs/2603.10795',
+  },
+  {
+    title:
+      'Thought Is All You Need: Smart Contract Vulnerability Detection with Thought-Augmented Large Language Model',
+    venue: 'ACM International Conference on the Foundations of Software Engineering',
+    venueShort: 'ACM FSE',
+    year: 2026,
+    link: 'https://dl.acm.org/doi/10.1145/3808141',
+    codeLink: 'https://github.com/ret2happy/synapse_agents',
+  },
+  {
+    title:
+      'Toss a Fault to BpfChecker: Revealing Implementation Flaws for eBPF runtimes with Differential Fuzzing',
     venue: 'ACM Conference on Computer and Communications Security',
     venueShort: 'ACM CCS',
     year: 2024,
     link: 'https://dl.acm.org/doi/10.1145/3658644.3690237',
+    codeLink: 'https://github.com/blocksecteam/BpfChecker',
   },
 ];
 
 export const findingGroups: FindingGroup[] = [
   {
     product: 'Chrome',
-    note: 'Renderer and browser-process issues reported through the Chrome VRP.',
     findings: [
       { id: 'CVE-2022-0603', severity: 'High' },
       { id: 'CVE-2022-4177', severity: 'High' },
@@ -46,7 +62,6 @@ export const findingGroups: FindingGroup[] = [
   },
   {
     product: 'Android',
-    note: 'Reported to the Android Security Team; tracked by internal bug ID.',
     findings: [
       { id: 'A181660091', severity: 'Critical' },
       { id: 'A181860042', severity: 'Critical' },
@@ -76,7 +91,6 @@ export const findingGroups: FindingGroup[] = [
   },
   {
     product: 'ImageMagick',
-    note: 'Memory-safety defects in image decoding paths.',
     findings: [
       { id: 'CVE-2021-20309' },
       { id: 'CVE-2021-20310' },
@@ -87,14 +101,13 @@ export const findingGroups: FindingGroup[] = [
   },
   {
     product: 'Wireshark',
-    note: 'Dissector crashes reachable from untrusted capture files.',
     findings: [{ id: 'CVE-2020-26575' }, { id: 'CVE-2020-28030' }],
   },
 ];
 
 export const awards: string[] = [
   'Chrome VRP Top 20 Security Researcher, 2022 and 2024',
-  'Google Top 50 Vulnerability Reward Program Researcher, 2022 to 2024',
+  'Google VRP Top 50 Researcher, 2022 to 2024',
 ];
 
 export const experience = [

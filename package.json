@@ -9,7 +9,6 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.5",
     "@vercel/analytics": "^2.0.1",
     "astro": "^7.1.6"
   },
