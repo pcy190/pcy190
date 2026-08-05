@@ -6,7 +6,6 @@ export type Publication = {
   venueShort: string;
   year: number;
   link: string;
-  codeLink?: string;
 };
 
 export const publications: Publication[] = [
@@ -25,7 +24,6 @@ export const publications: Publication[] = [
     venueShort: 'ACM FSE',
     year: 2026,
     link: 'https://dl.acm.org/doi/10.1145/3808141',
-    codeLink: 'https://github.com/ret2happy/synapse_agents',
   },
   {
     title:
@@ -34,31 +32,12 @@ export const publications: Publication[] = [
     venueShort: 'ACM CCS',
     year: 2024,
     link: 'https://dl.acm.org/doi/10.1145/3658644.3690237',
-    codeLink: 'https://github.com/blocksecteam/BpfChecker',
   },
 ];
 
 export const awards: string[] = [
   'Chrome VRP Top 20 Security Researcher, 2022 and 2024',
   'Google VRP Top 50 Researcher, 2022 to 2024',
-];
-
-export const experience = [
-  {
-    role: 'Security Research Intern',
-    org: 'BlockSec',
-    focus: 'Blockchain and DeFi security',
-  },
-  {
-    role: 'Security Research Intern',
-    org: 'Ant Group',
-    focus: 'Trusted execution environment security',
-  },
-  {
-    role: 'Security Research Intern',
-    org: 'GOSSIP Lab, Shanghai Jiao Tong University',
-    focus: 'Android platform security',
-  },
 ];
 
 export const links = {

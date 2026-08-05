@@ -1,13 +1,6 @@
 ---
 import Base from '@/layouts/Base.astro';
-import { avatar, awards, experience, links, publications } from '@/data/profile';
-
-const interests = [
-  { area: 'Systems security', detail: 'eBPF runtimes, OS kernels, trusted execution environments' },
-  { area: 'Program analysis', detail: 'differential fuzzing, coverage-guided fuzzing, crash triage' },
-  { area: 'Browser security', detail: 'Chrome renderer and browser-process vulnerabilities' },
-  { area: 'Blockchain security', detail: 'smart contracts, DeFi protocol design flaws' },
-];
+import { avatar, awards, links, publications } from '@/data/profile';
 ---
 
 <Base>
@@ -16,13 +9,15 @@ const interests = [
       <div class="doc-row">
         <div>
           <img src={avatar} alt="ret2happy" width="132" height="132" referrerpolicy="no-referrer" class="portrait" />
-          <p class="doc-label portrait-label">Zhejiang University</p>
         </div>
 
         <div>
           <h1 class="profile-name">ret2happy</h1>
 
-          <p class="motto">Attacks only get better.</p>
+          <p class="bio measure">
+            ret2happy is a security Ph.D. student at Zhejiang University. My interests span systems
+            security, AI for security, browser security, and web3 security.
+          </p>
 
           <div class="link-row">
             <a class="link-meta" href={links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
@@ -31,23 +26,6 @@ const interests = [
             <a class="link-meta" href={`mailto:${links.email}`}>{links.email}</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <hr class="rule rule-gap" />
-    <section class="section">
-      <div class="doc-row">
-        <p class="doc-label">Interests</p>
-        <dl>
-          {
-            interests.map((item) => (
-              <div class="deflist-row">
-                <dt class="deflist-term">{item.area}</dt>
-                <dd class="deflist-desc">{item.detail}</dd>
-              </div>
-            ))
-          }
-        </dl>
       </div>
     </section>
 
@@ -63,9 +41,6 @@ const interests = [
                 <p class="entry-meta">{pub.venueShort} {pub.year} · {pub.venue}</p>
                 <p class="entry-links">
                   <a class="link-meta" href={pub.link} target="_blank" rel="noopener noreferrer">Paper</a>
-                  {pub.codeLink && (
-                    <a class="link-meta" href={pub.codeLink} target="_blank" rel="noopener noreferrer">Code</a>
-                  )}
                 </p>
               </li>
             ))
@@ -80,24 +55,6 @@ const interests = [
         <p class="doc-label">Awards</p>
         <ul class="stack">
           {awards.map((award) => <li>{award}</li>)}
-        </ul>
-      </div>
-    </section>
-
-    <hr class="rule rule-gap" />
-    <section id="about" class="section">
-      <div class="doc-row">
-        <p class="doc-label">Appointments</p>
-        <ul class="stack stack-wide">
-          {
-            experience.map((item) => (
-              <li>
-                <span class="appt-org">{item.org}</span>
-                <br />
-                {item.role} · {item.focus}
-              </li>
-            ))
-          }
         </ul>
       </div>
     </section>
