@@ -1,33 +1,49 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Literata, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react"
 import Footer from "@/components/Footer";
+import { avatar } from "@/lib/profile";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const literata = Literata({
+  variable: "--font-literata",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexSans = IBM_Plex_Sans({
+  variable: "--font-plex-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "ret2happy's Blog",
-  description: "Personal academic blog of ret2happy",
-  keywords: ["security research", "blockchain security", "vulnerability research"],
+  title: {
+    default: "ret2happy · security research",
+    template: "%s | ret2happy",
+  },
+  description:
+    "Ph.D. candidate at Zhejiang University working on systems and blockchain security: eBPF runtimes, browser engines, and smart contracts.",
+  keywords: [
+    "security research",
+    "eBPF",
+    "fuzzing",
+    "browser security",
+    "blockchain security",
+    "vulnerability research",
+  ],
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
-    ],
+    icon: [{ url: avatar }],
+    apple: [{ url: avatar }],
   },
 };
 
@@ -39,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${literata.variable} ${plexSans.variable} ${plexMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>

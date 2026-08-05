@@ -1,12 +1,10 @@
 ---
 title: 'Uncovering Implementation Flaws in eBPF Runtime'
 date: '2024-03-15'
-excerpt: 'An analysis of the vulnerabilities discovered through differential fuzzing in the eBPF runtime environment.'
+excerpt: 'What differential fuzzing across eBPF runtimes turns up, and why fuzzing one runtime in isolation misses it.'
 tags: ['Security Research', 'eBPF', 'Differential Fuzzing', 'ACM CCS']
 author: 'ret2happy'
 ---
-
-# Uncovering Implementation Flaws in eBPF Runtime
 
 Extended Berkeley Packet Filter (eBPF) has become a fundamental technology in modern Linux systems, enabling dynamic program analysis and security filtering. However, its complex implementation presents significant security challenges. In this paper, published at ACM CCS, we present a novel approach to discovering implementation flaws in the eBPF runtime through differential fuzzing.
 
