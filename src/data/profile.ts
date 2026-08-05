@@ -44,7 +44,8 @@ export const publications: Publication[] = [
 
 export const awards: string[] = [
   'Chrome VRP Top 20 Security Researcher, 2022 and 2024',
-  'Google VRP Top 50 Researcher, 2022 to present',
+  'Google VRP Top 50 Security Researcher, 2022 to present',
+  'Android Top 50 Security Researcher, 2021 and 2022',
 ];
 
 export const links = {

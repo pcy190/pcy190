@@ -225,10 +225,6 @@ main {
   margin-inline: auto;
 }
 
-#profile .link-row {
-  justify-content: center;
-}
-
 .profile-name {
   font-family: var(--serif);
   font-size: 26px;
@@ -251,13 +247,6 @@ main {
 }
 
 /* ---- links ----------------------------------------------------------- */
-
-.link-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  margin-top: 32px;
-}
 
 .link-meta {
   font-family: var(--mono);
