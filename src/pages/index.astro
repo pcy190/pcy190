@@ -1,31 +1,23 @@
 ---
 import Base from '@/layouts/Base.astro';
-import { avatar, awards, links, publications } from '@/data/profile';
+import { awards, links, me, publications } from '@/data/profile';
 ---
 
 <Base>
   <div class="doc page-foot">
     <section id="profile" class="section-lead">
-      <div class="doc-row">
-        <div>
-          <img src={avatar} alt="ret2happy" width="132" height="132" referrerpolicy="no-referrer" class="portrait" />
-        </div>
+      <h1 class="profile-name">Chaoyuan Peng</h1>
 
-        <div>
-          <h1 class="profile-name">ret2happy</h1>
+      <p class="bio measure">
+        Chaoyuan Peng is a Ph.D. student at Zhejiang University. His interests span AI for security,
+        systems security, browser security, and web3 security. He previously interned at BlockSec,
+        Ant Group, and GOSSIP, and is now at Qwen.
+      </p>
 
-          <p class="bio measure">
-            ret2happy is a security Ph.D. student at Zhejiang University. My interests span systems
-            security, AI for security, browser security, and web3 security.
-          </p>
-
-          <div class="link-row">
-            <a class="link-meta" href={links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
-            <a class="link-meta" href={links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="link-meta" href={links.x} target="_blank" rel="noopener noreferrer">X</a>
-            <a class="link-meta" href={`mailto:${links.email}`}>{links.email}</a>
-          </div>
-        </div>
+      <div class="link-row">
+        <a class="link-meta" href={links.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a class="link-meta" href={links.x} target="_blank" rel="noopener noreferrer">X</a>
+        <a class="link-meta" href={`mailto:${links.email}`}>{links.email}</a>
       </div>
     </section>
 
@@ -38,8 +30,16 @@ import { avatar, awards, links, publications } from '@/data/profile';
             publications.map((pub) => (
               <li>
                 <h2 class="entry-title measure">{pub.title}</h2>
-                <p class="entry-meta">{pub.venueShort} {pub.year} · {pub.venue}</p>
-                <p class="entry-links">
+                <p class="entry-authors measure">
+                  {pub.authors.map((author, i) => (
+                    <Fragment>
+                      {i > 0 ? ', ' : ''}
+                      {author === me ? <strong class="entry-me">{author}</strong> : author}
+                    </Fragment>
+                  ))}
+                </p>
+                <p class="entry-meta">
+                  {pub.venueShort} {pub.year} ·{' '}
                   <a class="link-meta" href={pub.link} target="_blank" rel="noopener noreferrer">Paper</a>
                 </p>
               </li>
