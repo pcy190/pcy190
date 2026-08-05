@@ -7,5 +7,13 @@
     { "source": "/about", "destination": "/#profile", "permanent": true },
     { "source": "/research", "destination": "/#findings", "permanent": true },
     { "source": "/contact", "destination": "/#contact", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
   ]
 }

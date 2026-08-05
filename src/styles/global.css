@@ -1,13 +1,13 @@
 /*
-  Latin-only woff2, declared by hand. Importing the fontsource stylesheets
-  instead would copy every subset (cyrillic, greek, vietnamese) into the build.
+  Latin-only woff2, vendored into public/fonts so the URLs are stable and can be
+  preloaded from the document head. Long-lived caching is set in vercel.json.
 */
 @font-face {
   font-family: 'Literata';
   font-style: normal;
   font-weight: 200 900;
   font-display: swap;
-  src: url('@fontsource-variable/literata/files/literata-latin-standard-normal.woff2') format('woff2');
+  src: url('/fonts/literata-latin.woff2') format('woff2');
 }
 
 @font-face {
@@ -15,7 +15,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2') format('woff2');
+  src: url('/fonts/plex-sans-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-500-normal.woff2') format('woff2');
+  src: url('/fonts/plex-sans-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -31,7 +31,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+  src: url('/fonts/plex-mono-400.woff2') format('woff2');
 }
 
 /*
