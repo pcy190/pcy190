@@ -3,52 +3,68 @@ import { FaArrowRight } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden tech-pattern">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              {/* <span className="block">Computer & Blockchain</span> */}
-              <span className="academic-gradient text-transparent bg-clip-text">ret2happy</span>
-            </h1>
-            
-            <p className="text-lg text-muted mb-8 max-w-xl">
-              My research spans traditional ones (software security, operating systems security) and emerging areas (blockchain security, DeFi security).
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/research" className="button-primary inline-flex items-center">
-                My Research
-                <FaArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
+    <section className="site-shell panel-surface panel-grid min-h-[calc(100vh-98px)] overflow-hidden pb-28">
+      <div className="mx-auto max-w-[760px] px-10 pt-20 text-center">
+        <div className="inline-flex items-center rounded-sm border border-[#d8d3c8] bg-[#f5f2ea] text-[12px] leading-none text-[#737066]">
+          <span className="px-3 py-2">Introducing ret2happy</span>
+          <Link
+            href="/research"
+            className="inline-flex items-center gap-1 border-l border-[#d8d3c8] bg-[#262626] px-3 py-2 text-[#f5f2ea]"
+          >
+            Explore
+            <FaArrowRight className="h-3 w-3" />
+          </Link>
+        </div>
+
+        <h1 className="mt-6 text-[64px] font-semibold leading-[0.98] tracking-[-0.03em] text-[#1f1f1f]">
+          Security research
+          <br />
+          with practical impact.
+        </h1>
+
+        <p className="mx-auto mt-6 max-w-[680px] text-[15px] leading-relaxed text-[#6f6a60]">
+          My research spans traditional ones (software security, operating systems security) and emerging areas (blockchain security, DeFi security).
+        </p>
+
+        <div className="mx-auto mt-10 w-full max-w-[580px] rounded-[2px] border border-[#3e3e3e] bg-[#1f1f1f] p-4 text-left shadow-[0_10px_20px_rgba(0,0,0,0.12)]">
+          <p className="text-[13px] text-[#cbc7be]">
+            Revealing Implementation Flaws for eBPF Runtime via Differential Fuzzing.
+          </p>
+          <div className="mt-5 flex items-center justify-between text-[12px] text-[#8d897f]">
+            <span className="inline-block rounded border border-[#55534e] px-2 py-1">ACM CCS 2024</span>
+            <Link href="/research" className="inline-flex h-6 w-6 items-center justify-center rounded border border-[#55534e] hover:bg-[#2b2b2b]">
+              <FaArrowRight className="h-3 w-3 text-[#d6d2ca]" />
+            </Link>
           </div>
-          
-          <div className="relative">
-            <div className="bg-card shadow-xl rounded-xl p-6 border border-card-border relative z-10">
-              <div className="academic-gradient h-2 w-24 rounded mb-6"></div>
-              <h2 className="text-xl font-semibold mb-4">Latest Research</h2>
-              <p className="text-muted mb-6">
-                Revealing Implementation Flaws for eBPF Runtime via Differential Fuzzing
-              </p>
-              <div className="flex items-center text-sm text-muted">
-                <span className="inline-block py-1 px-2 rounded bg-primary/10 text-primary text-xs font-medium mr-3">
-                  ACM CCS 2024
-                </span>
-                {/* <span>Published in 2024</span> */}
-              </div>
-            </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[90%] max-h-[90%] rounded-xl border border-card-border -z-10 -rotate-3"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[90%] max-h-[90%] rounded-xl border border-card-border -z-20 rotate-6"></div>
+        </div>
+
+        <div className="mx-auto mt-8 flex max-w-[760px] flex-wrap items-center justify-center gap-3 text-[12px] text-[#5f5b52]">
+          <Link href="/research" className="hero-chip">eBPF Runtime Security</Link>
+          <Link href="/research" className="hero-chip">Chrome Security</Link>
+          <Link href="/blog" className="hero-chip">Recent Blog Posts</Link>
+          <Link href="/about" className="hero-chip">About Me</Link>
+          <Link href="/contact" className="hero-chip">Contact</Link>
+        </div>
+
+        <div className="mt-28">
+          <h2 className="text-[46px] font-semibold leading-[1.02] tracking-[-0.02em] text-[#272727]">
+            Trusted by the teams
+            <br />
+            redefining productivity
+          </h2>
+
+          <div className="mx-auto mt-10 grid max-w-[720px] grid-cols-4 gap-x-8 gap-y-5 text-[28px] font-medium tracking-[0.01em] text-[#7f7a70]">
+            <span>twilio</span>
+            <span>SUPERHUMAN</span>
+            <span>Vercel</span>
+            <span>reδl</span>
+            <span>pilothouse</span>
+            <span>THREAT TEC</span>
+            <span>BLACKBIRD</span>
+            <span>Ripple</span>
           </div>
         </div>
       </div>
-      
-      {/* Background decorative elements */}
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };
