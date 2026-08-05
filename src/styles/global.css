@@ -80,7 +80,6 @@ body {
   font-family: var(--sans);
   font-size: 15px;
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -191,7 +190,7 @@ main {
 .masthead-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 24px;
   padding: 20px 0 18px;
 }
@@ -234,8 +233,8 @@ main {
 }
 
 .bio {
-  color: var(--ink-2);
-  font-size: 15px;
+  color: var(--ink);
+  font-size: 16px;
   line-height: 1.68;
   margin-top: 16px;
   max-width: 78ch;
@@ -371,7 +370,7 @@ main {
 
   .masthead-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 14px;
   }
 
