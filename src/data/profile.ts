@@ -7,7 +7,7 @@ export type Publication = {
   authors: string[];
   venueShort: string;
   year: number;
-  link: string;
+  link?: string;
 };
 
 export const publications: Publication[] = [
@@ -25,6 +25,12 @@ export const publications: Publication[] = [
     venueShort: 'ACM FSE',
     year: 2026,
     link: 'https://dl.acm.org/doi/10.1145/3808141',
+  },
+  {
+    title: 'Beyond the Surface: Towards Feature-Driven Fuzzing on the Chrome Browser',
+    authors: ['Chaoyuan Peng', 'Muhui Jiang', 'Yajin Zhou', 'Lei Wu'],
+    venueShort: 'ISSTA',
+    year: 2026,
   },
   {
     title:

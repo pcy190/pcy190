@@ -27,6 +27,14 @@
 }
 
 @font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/plex-sans-600.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: 400;
@@ -188,28 +196,6 @@ main {
   padding: 20px 0 18px;
 }
 
-.masthead-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-}
-
-.masthead-mark {
-  width: 24px;
-  height: 24px;
-  object-fit: cover;
-  border-radius: 2px;
-  border: 1px solid var(--rule-strong);
-  flex: none;
-}
-
-.masthead-name {
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.02em;
-  color: var(--ink);
-}
-
 .masthead-nav {
   display: flex;
   align-items: baseline;
@@ -231,6 +217,18 @@ main {
 
 /* ---- profile --------------------------------------------------------- */
 
+#profile {
+  text-align: center;
+}
+
+#profile .bio {
+  margin-inline: auto;
+}
+
+#profile .link-row {
+  justify-content: center;
+}
+
 .profile-name {
   font-family: var(--serif);
   font-size: 26px;
@@ -244,6 +242,12 @@ main {
   font-size: 15px;
   line-height: 1.68;
   margin-top: 16px;
+  max-width: 78ch;
+}
+
+.bio strong {
+  font-weight: 600;
+  color: var(--ink);
 }
 
 /* ---- links ----------------------------------------------------------- */

@@ -8,10 +8,18 @@ import { awards, links, me, publications } from '@/data/profile';
     <section id="profile" class="section-lead">
       <h1 class="profile-name">Chaoyuan Peng</h1>
 
-      <p class="bio measure">
+      <p class="bio">
         Chaoyuan Peng is a Ph.D. student at Zhejiang University. His interests span AI for security,
-        systems security, browser security, and web3 security. He previously interned at BlockSec,
-        Ant Group, and GOSSIP, and is now at Qwen.
+        systems security, browser security, and web3 security.
+      </p>
+      <p class="bio">
+        He is currently doing an internship at <strong>Qwen</strong>. Previously, he interned at
+        BlockSec, Ant Group, and GOSSIP.
+      </p>
+      <p class="bio">
+        He is an Ethereum Protocol Fellow (2024) and a former Vice-President of the ZJU Blockchain
+        Association. He has reported more than 80 fixed vulnerabilities in Chrome and more than 30 in
+        AOSP.
       </p>
 
       <div class="link-row">
@@ -39,8 +47,15 @@ import { awards, links, me, publications } from '@/data/profile';
                   ))}
                 </p>
                 <p class="entry-meta">
-                  {pub.venueShort} {pub.year} ·{' '}
-                  <a class="link-meta" href={pub.link} target="_blank" rel="noopener noreferrer">Paper</a>
+                  {pub.venueShort} {pub.year}
+                  {pub.link && (
+                    <Fragment>
+                      {' · '}
+                      <a class="link-meta" href={pub.link} target="_blank" rel="noopener noreferrer">
+                        Paper
+                      </a>
+                    </Fragment>
+                  )}
                 </p>
               </li>
             ))

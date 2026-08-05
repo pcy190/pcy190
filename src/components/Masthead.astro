@@ -1,6 +1,4 @@
 ---
-import { avatar } from '@/data/profile';
-
 const sections = [
   { name: 'Profile', href: '/#profile' },
   { name: 'Publications', href: '/#publications' },
@@ -10,11 +8,6 @@ const sections = [
 
 <header class="masthead">
   <div class="doc masthead-inner">
-    <a href="/" class="masthead-brand" aria-label="Chaoyuan Peng, home">
-      <img src={avatar} alt="" width="24" height="24" class="masthead-mark" />
-      <span class="masthead-name">Chaoyuan Peng</span>
-    </a>
-
     <nav class="masthead-nav" aria-label="Sections">
       {sections.map((section) => <a href={section.href} class="masthead-link">{section.name}</a>)}
     </nav>
