@@ -1,11 +1,12 @@
 ---
 import Base from '@/layouts/Base.astro';
-import { awards, links, me, publications } from '@/data/profile';
+import { avatar, awards, links, me, publications } from '@/data/profile';
 ---
 
 <Base>
   <div class="doc page-foot">
     <section id="profile" class="section-lead">
+      <img src={avatar} alt="Chaoyuan Peng" width="96" height="96" class="portrait" />
       <h1 class="profile-name">Chaoyuan Peng</h1>
 
       <p class="bio">
@@ -35,7 +36,7 @@ import { awards, links, me, publications } from '@/data/profile';
           {
             publications.map((pub) => (
               <li>
-                <h2 class="entry-title measure">{pub.title}</h2>
+                <h2 class="entry-title">{pub.title}</h2>
                 <p class="entry-authors measure">
                   {pub.authors.map((author, i) => (
                     <Fragment>

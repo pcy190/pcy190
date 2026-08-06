@@ -224,6 +224,17 @@ main {
   margin-inline: auto;
 }
 
+.portrait {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 18px;
+  object-fit: cover;
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  background: var(--paper-raised);
+}
+
 .profile-name {
   font-family: var(--serif);
   font-size: 26px;
@@ -238,6 +249,7 @@ main {
   line-height: 1.68;
   margin-top: 16px;
   max-width: 78ch;
+  text-align: left;
 }
 
 .bio strong {

@@ -2,7 +2,7 @@
 import '@/styles/global.css';
 import Analytics from '@vercel/analytics/astro';
 import Masthead from '@/components/Masthead.astro';
-import { avatar } from '@/data/profile';
+import { avatar, links } from '@/data/profile';
 
 interface Props {
   title?: string;
@@ -15,6 +15,28 @@ const defaultDescription =
 const { title, description = defaultDescription } = Astro.props;
 const pageTitle = title ? `${title} | Chaoyuan Peng` : 'Chaoyuan Peng · security research';
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(avatar, Astro.site);
+const siteUrl = new URL('/', Astro.site);
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Chaoyuan Peng',
+  alternateName: 'ret2happy',
+  url: siteUrl.href,
+  image: ogImage.href,
+  jobTitle: 'Ph.D. Student',
+  affiliation: { '@type': 'CollegeOrUniversity', name: 'Zhejiang University' },
+  knowsAbout: [
+    'AI for security',
+    'Systems security',
+    'Browser security',
+    'Web3 security',
+    'Fuzzing',
+    'Vulnerability research',
+  ],
+  sameAs: [links.scholar, links.x],
+};
 ---
 
 <!doctype html>
@@ -24,15 +46,30 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Chaoyuan Peng" />
     <link rel="canonical" href={canonical} />
     <link rel="preload" href="/fonts/literata-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href={avatar} />
     <link rel="apple-touch-icon" href={avatar} />
+
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Chaoyuan Peng" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Chaoyuan Peng" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@ret2happy" />
+    <meta name="twitter:creator" content="@ret2happy" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(person)} />
   </head>
   <body>
     <Masthead />
