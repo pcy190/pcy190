@@ -13,7 +13,7 @@ const defaultDescription =
   'Chaoyuan Peng is a Ph.D. student at Zhejiang University working on AI for security, web3 security, browser security, and systems security.';
 
 const { title, description = defaultDescription } = Astro.props;
-const pageTitle = title ? `${title} | Chaoyuan Peng` : 'Chaoyuan Peng · security research';
+const pageTitle = title ? `${title} | ret2happy` : 'ret2happy';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL(avatar, Astro.site);
 const siteUrl = new URL('/', Astro.site);
@@ -59,7 +59,7 @@ const person = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="Chaoyuan Peng" />
+    <meta property="og:site_name" content="ret2happy" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content="Chaoyuan Peng" />
