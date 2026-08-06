@@ -21,7 +21,7 @@ export const GET: APIRoute = () => {
 
 > Ph.D. student at Zhejiang University working on AI for security, web3 security, browser security, and systems security.
 
-Chaoyuan Peng (also known as ret2happy) is a Ph.D. student at Zhejiang University, under the supervision of Yajin Zhou (https://yajin.org/) and Lei Wu (https://leiwu.org/). He has uncovered more than 100 vulnerabilities in Chrome, more than 30 vulnerabilities in AOSP, and several critical vulnerabilities in mainstream blockchain clients. He is currently a research intern at Qwen, and previously interned at BlockSec, Ant Group, and GOSSIP. He was an Ethereum Protocol Fellow, a vice president of the ZJU Blockchain Association, and a core member of L-team.
+Chaoyuan Peng (also known as ret2happy) is a Ph.D. student at Zhejiang University, under the supervision of Yajin Zhou (https://yajin.org/) and Lei Wu (https://leiwu.org/). He has uncovered more than 100 vulnerabilities in Chrome, more than 30 vulnerabilities in AOSP, and several critical vulnerabilities in mainstream blockchain clients. He is currently a research intern at Qwen, and previously interned at BlockSec, Ant Group, and GOSSIP. He was an Ethereum Protocol Fellow and a vice president of the ZJU Blockchain Association.
 
 ## Publications
 ${pubs}
