@@ -1,7 +1,7 @@
-Visit ret2happy.com for my blog :)
+Visit ret2happy.com
 
-Astro, no client framework. Posts live in `src/content/blog`, the research
-record in `src/data/profile.ts`.
+Personal homepage, built with Astro and no client-side framework. The
+research record lives in `src/data/profile.ts`.
 
     npm install
     npm run dev     # local server
