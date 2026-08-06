@@ -12,11 +12,10 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
-    title: 'Re-Evaluating EVMBench: Are AI Agents Ready for Smart Contract Security?',
-    authors: ['Chaoyuan Peng', 'Lei Wu', 'Yajin Zhou'],
-    venueShort: 'arXiv',
+    title: 'Beyond the Surface: Towards Feature-Driven Fuzzing on the Chrome Browser',
+    authors: ['Chaoyuan Peng', 'Muhui Jiang', 'Yajin Zhou', 'Lei Wu'],
+    venueShort: 'ISSTA',
     year: 2026,
-    link: 'https://arxiv.org/abs/2603.10795',
   },
   {
     title:
@@ -27,10 +26,11 @@ export const publications: Publication[] = [
     link: 'https://dl.acm.org/doi/10.1145/3808141',
   },
   {
-    title: 'Beyond the Surface: Towards Feature-Driven Fuzzing on the Chrome Browser',
-    authors: ['Chaoyuan Peng', 'Muhui Jiang', 'Yajin Zhou', 'Lei Wu'],
-    venueShort: 'ISSTA',
+    title: 'Re-Evaluating EVMBench: Are AI Agents Ready for Smart Contract Security?',
+    authors: ['Chaoyuan Peng', 'Lei Wu', 'Yajin Zhou'],
+    venueShort: 'arXiv',
     year: 2026,
+    link: 'https://arxiv.org/abs/2603.10795',
   },
   {
     title:

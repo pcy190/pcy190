@@ -10,7 +10,7 @@ interface Props {
 }
 
 const defaultDescription =
-  'Chaoyuan Peng is a Ph.D. student at Zhejiang University working on AI for security, systems security, browser security, and web3 security.';
+  'Chaoyuan Peng is a Ph.D. student at Zhejiang University working on AI for security, web3 security, browser security, and systems security.';
 
 const { title, description = defaultDescription } = Astro.props;
 const pageTitle = title ? `${title} | Chaoyuan Peng` : 'Chaoyuan Peng · security research';
@@ -29,9 +29,9 @@ const person = {
   affiliation: { '@type': 'CollegeOrUniversity', name: 'Zhejiang University' },
   knowsAbout: [
     'AI for security',
-    'Systems security',
-    'Browser security',
     'Web3 security',
+    'Browser security',
+    'Systems security',
     'Fuzzing',
     'Vulnerability research',
   ],
