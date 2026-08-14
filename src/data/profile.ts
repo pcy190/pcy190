@@ -48,6 +48,11 @@ export const awards: string[] = [
   'Android Top 50 Security Researcher, 2021 and 2022',
 ];
 
+// Hand-maintained: bump this date whenever the page content changes. It feeds
+// the sitemap <lastmod> and the ProfilePage dateModified, so it should track
+// real content edits, not deploys.
+export const lastUpdated = '2026-08-14';
+
 export const links = {
   scholar: 'https://scholar.google.com/citations?hl=en&user=-aNzh9EAAAAJ',
   x: 'https://x.com/ret2happy',

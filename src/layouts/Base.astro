@@ -2,7 +2,7 @@
 import '@/styles/global.css';
 import Analytics from '@vercel/analytics/astro';
 import Masthead from '@/components/Masthead.astro';
-import { avatar, links } from '@/data/profile';
+import { avatar, lastUpdated, links } from '@/data/profile';
 
 interface Props {
   title?: string;
@@ -13,18 +13,19 @@ const defaultDescription =
   'Chaoyuan Peng is a Ph.D. student at Zhejiang University working on AI for security, web3 security, browser security, and systems security.';
 
 const { title, description = defaultDescription } = Astro.props;
-const pageTitle = title ? `${title} | ret2happy` : 'ret2happy';
+const pageTitle = title ? `${title} | ret2happy` : 'ret2happy — Chaoyuan Peng';
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL(avatar, Astro.site);
+const portrait = new URL(avatar, Astro.site);
+const ogImage = new URL('/og-card.png', Astro.site);
 const siteUrl = new URL('/', Astro.site);
 
 const person = {
-  '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Chaoyuan Peng',
   alternateName: 'ret2happy',
   url: siteUrl.href,
-  image: ogImage.href,
+  image: portrait.href,
+  email: links.email,
   jobTitle: 'Ph.D. Student',
   affiliation: { '@type': 'CollegeOrUniversity', name: 'Zhejiang University' },
   knowsAbout: [
@@ -36,6 +37,23 @@ const person = {
     'Vulnerability research',
   ],
   sameAs: [links.scholar, links.x],
+};
+
+// WebSite is what Google reads for the site name shown in results, and
+// ProfilePage is its documented markup for a personal homepage.
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'ret2happy',
+  alternateName: 'Chaoyuan Peng',
+  url: siteUrl.href,
+};
+
+const profilePage = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  dateModified: lastUpdated,
+  mainEntity: person,
 };
 ---
 
@@ -51,7 +69,7 @@ const person = {
     <link rel="preload" href="/fonts/literata-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="icon" href={avatar} />
-    <link rel="apple-touch-icon" href={avatar} />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="me" href={links.x} />
     <link rel="me" href={links.scholar} />
 
@@ -62,16 +80,20 @@ const person = {
     <meta property="og:site_name" content="ret2happy" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:image:alt" content="Chaoyuan Peng" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Chaoyuan Peng (ret2happy), Ph.D. student at Zhejiang University" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ret2happy" />
     <meta name="twitter:creator" content="@ret2happy" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(person)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(website)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(profilePage)} />
   </head>
   <body>
     <Masthead />

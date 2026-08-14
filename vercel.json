@@ -3,7 +3,9 @@
   "framework": "astro",
   "buildCommand": "astro build",
   "outputDirectory": "dist",
+  "trailingSlash": false,
   "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/about", "destination": "/#profile", "permanent": true },
     { "source": "/research", "destination": "/#publications", "permanent": true },
     { "source": "/contact", "destination": "/#contact", "permanent": true },

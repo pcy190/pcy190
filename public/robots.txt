@@ -1,29 +1,22 @@
+# Everything on this site is public. Nothing is disallowed.
+# "Disallow:" with an empty value is the oldest and most widely understood
+# way to say that, for parsers that predate the Allow directive.
 User-agent: *
 Allow: /
+Disallow:
 
 # AI assistants and search agents are welcome to read and cite this site.
+# Google-Extended and Applebot-Extended are AI-training opt-out tokens, so
+# listing them here is an explicit yes rather than a no-op.
 User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
 User-agent: Claude-Web
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Google-Extended
-Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
+Disallow:
 
 Sitemap: https://ret2happy.com/sitemap.xml
