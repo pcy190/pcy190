@@ -13,7 +13,7 @@ const defaultDescription =
   'Chaoyuan Peng is a Ph.D. student at Zhejiang University working on AI for security, web3 security, browser security, and systems security.';
 
 const { title, description = defaultDescription } = Astro.props;
-const pageTitle = title ? `${title} | ret2happy` : 'ret2happy — Chaoyuan Peng';
+const pageTitle = title ? `${title} | Chaoyuan Peng` : 'Chaoyuan Peng';
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const portrait = new URL(avatar, Astro.site);
 const ogImage = new URL('/og-card.png', Astro.site);
@@ -22,7 +22,6 @@ const siteUrl = new URL('/', Astro.site);
 const person = {
   '@type': 'Person',
   name: 'Chaoyuan Peng',
-  alternateName: 'ret2happy',
   url: siteUrl.href,
   image: portrait.href,
   email: links.email,
@@ -44,8 +43,7 @@ const person = {
 const website = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'ret2happy',
-  alternateName: 'Chaoyuan Peng',
+  name: 'Chaoyuan Peng',
   url: siteUrl.href,
 };
 
@@ -77,13 +75,13 @@ const profilePage = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="ret2happy" />
+    <meta property="og:site_name" content="Chaoyuan Peng" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:alt" content="Chaoyuan Peng (ret2happy), Ph.D. student at Zhejiang University" />
+    <meta property="og:image:alt" content="Chaoyuan Peng, Ph.D. student at Zhejiang University" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ret2happy" />

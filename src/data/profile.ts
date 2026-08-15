@@ -51,7 +51,7 @@ export const awards: string[] = [
 // Hand-maintained: bump this date whenever the page content changes. It feeds
 // the sitemap <lastmod> and the ProfilePage dateModified, so it should track
 // real content edits, not deploys.
-export const lastUpdated = '2026-08-14';
+export const lastUpdated = '2026-08-15';
 
 export const links = {
   scholar: 'https://scholar.google.com/citations?hl=en&user=-aNzh9EAAAAJ',
